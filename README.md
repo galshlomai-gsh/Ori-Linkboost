@@ -1,6 +1,6 @@
 # Ori Linkboost
 
-Next.js 15 + TypeScript app using the App Router and Tailwind CSS v4.
+Next.js + TypeScript app using the App Router and Tailwind CSS v4.
 
 ## Getting started
 
