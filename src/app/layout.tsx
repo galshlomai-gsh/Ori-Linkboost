@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
+import { Heebo } from "next/font/google";
 import "./globals.css";
 
+const heebo = Heebo({
+  subsets: ["hebrew", "latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-heebo",
+});
+
 export const metadata: Metadata = {
-  title: "Ori Linkboost",
-  description: "Ori Linkboost",
+  title: "LinkBoost — ניהול בניית קישורים לסוכנויות SEO",
+  description:
+    "שירות ניהול בניית קישורים איכותיים לסוכנויות קידום אתרים ומקדמים עצמאיים. קישורים אמיתיים, דוחות שקופים, שקט תעשייתי.",
 };
 
 export default function RootLayout({
@@ -12,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-white text-slate-900 antialiased">
+    <html lang="he" dir="rtl" className={heebo.variable}>
+      <body className="min-h-screen bg-[#05070d] text-slate-100 antialiased font-sans">
         {children}
       </body>
     </html>
