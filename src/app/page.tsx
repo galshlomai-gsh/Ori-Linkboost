@@ -12,17 +12,17 @@ const stats = [
 
 const stories = [
   {
-    name: "ליאור",
+    title: "תנו לנו לספר לכם על ליאור",
     intro: "ליאור הגיע אלינו מאוד סקפטי ואפילו חשדן וחסר סבלנות",
     body: 'הוא הגיע אלינו אחרי שניסה לא מעט לבנות קישורים בעצמו וגם אחרי שניסה כמה חברות בניית קישורים מוכרות בשוק. בסופו של דבר, כמו שהוא אמר, איך שהוא לא סובב את זה, יצא לו להתעסק המון עם בניית הקישורים. אם זה בלעשות בעצמו, או אם זה ב"לבדוק" את מי שעשה לו. ולצערו, הוא התאכזב לא מעט.',
   },
   {
-    name: "אוריאל",
+    title: "או על אוריאל",
     intro: 'אוריאל עשה הכול לבד, הרגיש שהוא פשוט "טובע" בעבודה השוטפת',
     body: 'של הקידום, כשחלק מרכזי ממנה היתה עבודת הקישורים. אוריאל ממש רצה "להוריד מעצמו" את העבודה הסיזיפית של הקישורים. כיום, לא מעט שנים אחרי אותה שיחה, אוריאל עדיין לקוח שלנו ונכון מאוד, מאז הוא לא מתעסק כלל עם בניית הקישורים.',
   },
   {
-    name: "בן",
+    title: "או על בן",
     intro: "בן הגיע אלינו כשרצה להוריד מעצמו וגם מהעובדים שלו את עבודת הקישורים",
     body: "כיום, כבר שנה בערך, הכול רץ חלק. אנחנו מול העובדים של בן. בן בקושי בתמונה בכלל, והכול מתנהל בצורה אוטומטית.",
   },
@@ -92,6 +92,7 @@ const steps = [
 
 const testimonials = [
   {
+    title: "עבודה הרבה יותר טובה מעובד InHouse",
     quote:
       "עבודה נהדרת בכל חודש, הלינקים איכותיים ועוזרים לי להראות התקדמות בדוחות שלנו. עבודה הרבה יותר טובה מעובד InHouse מכיוון שהוא מוכן מבחינת תשתית ונותן מענה לכל הצרכים, מומלץ מאוד!",
     highlight: "הלינקים איכותיים ועוזרים לי להראות התקדמות בדוחות שלנו",
@@ -100,6 +101,7 @@ const testimonials = [
     tone: "purple" as const,
   },
   {
+    title: "המחיר הוגן, השירות איכותי, עמידה בזמנים ואני ממליץ בחום",
     quote:
       "אני מזמין מזה מספר שנים קישורים איכותיים מאופיר שהתגלה כאיש מקצוע מעולה, מבין SEO ואת החשיבות הרלוונטיות והמדדים לבחינת איכות האתרים המפנים. אופיר והצוות שלו בונים עבור משרדינו קישורים איכותיים המשמשים כמחזקי SEO לצד קישורים המפנים תנועה שלבסוף גם הופכת להמרות. המחיר הוגן, השירות איכותי, עמידה בזמנים ואני ממליץ בחום.",
     highlight: "המחיר הוגן, השירות איכותי, עמידה בזמנים",
@@ -108,6 +110,7 @@ const testimonials = [
     tone: "teal" as const,
   },
   {
+    title: "השירות מעולה, נותן הרגשה של שותפות ואכפתיות. מומלץ ביותר!",
     quote:
       "מקצוען אמיתי, מומחה בקידום אורגני ונותן פתרונות טובים שמותאמים לצרכינו. ולא פחות מזה, השירות מעולה, נותן הרגשה של שותפות ואכפתיות. מומלץ ביותר.",
     highlight: "השירות מעולה, נותן הרגשה של שותפות ואכפתיות",
@@ -116,6 +119,8 @@ const testimonials = [
     tone: "amber" as const,
   },
   {
+    title:
+      "דוח קישורים מגיע כמו שעון בדיוק בזמן לפני הוצאת דוחות ללקוחות",
     quote:
       "אחרי מספר רב של ניסיונות לא מוצלחים למצוא פתרון לבניית קישורים עבור הלקוחות שלי הגעתי דרך לקוח משותף לאופיר שהראה שדברים יכולים להתנהל בצורה מקצועית ושירותית מאוד ולא פחות חשוב, תהליך ההזמנה מתבצע באופן מסודר ומאוד ברור מה מקבלים בסוף החודש. דוח קישורים מגיע כמו שעון בדיוק בזמן לפני הוצאת דוחות ללקוחות. שירות מומלץ מאוד!",
     highlight: "דוח קישורים מגיע כמו שעון בדיוק בזמן לפני הוצאת דוחות ללקוחות",
@@ -132,6 +137,13 @@ const toneRing: Record<(typeof testimonials)[number]["tone"], string> = {
   blue: "ring-glow-blue",
 };
 
+const toneHud: Record<(typeof testimonials)[number]["tone"], string> = {
+  purple: "hud hud-purple",
+  teal: "hud hud-teal",
+  amber: "hud hud-amber",
+  blue: "hud hud-blue",
+};
+
 const toneQuote: Record<(typeof testimonials)[number]["tone"], string> = {
   purple: "text-purple-300",
   teal: "text-teal-300",
@@ -139,9 +151,16 @@ const toneQuote: Record<(typeof testimonials)[number]["tone"], string> = {
   blue: "text-sky-300",
 };
 
+const toneTitle: Record<(typeof testimonials)[number]["tone"], string> = {
+  purple: "text-purple-200",
+  teal: "text-teal-200",
+  amber: "text-amber-200",
+  blue: "text-sky-200",
+};
+
 export default function Home() {
   return (
-    <main className="bg-starfield">
+    <main className="bg-cyber">
       <SiteHeader />
       <Hero />
       <PainPoints />
@@ -162,11 +181,11 @@ export default function Home() {
 
 function SiteHeader() {
   return (
-    <header className="relative z-10">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+    <header className="relative z-10 border-b border-white/5 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a
           href="#contact"
-          className="hidden rounded-full border border-cyan-400/40 px-4 py-1.5 text-sm font-medium text-cyan-200 transition hover:bg-cyan-400/10 sm:inline-flex"
+          className="hidden rounded-full border border-cyan-400/40 bg-cyan-400/5 px-4 py-1.5 text-sm font-medium text-cyan-200 transition hover:bg-cyan-400/10 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] sm:inline-flex"
         >
           בדיקת התאמה חינם
         </a>
@@ -179,7 +198,7 @@ function SiteHeader() {
 function Logo() {
   return (
     <div className="flex items-center gap-2">
-      <span className="grid h-9 w-9 place-items-center rounded-lg bg-cyan-400/10 ring-1 ring-cyan-400/40">
+      <span className="relative grid h-9 w-9 place-items-center rounded-lg bg-cyan-400/10 ring-1 ring-cyan-400/50 shadow-[0_0_18px_rgba(34,211,238,0.35)]">
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -189,12 +208,14 @@ function Logo() {
           <path
             d="M9.5 14.5 14.5 9.5M8 12a4 4 0 0 1 4-4h2a4 4 0 0 1 0 8h-2M16 12a4 4 0 0 1-4 4h-2a4 4 0 0 1 0-8h2"
             stroke="currentColor"
-            strokeWidth="1.6"
+            strokeWidth="1.8"
             strokeLinecap="round"
           />
         </svg>
       </span>
-      <span className="text-lg font-bold tracking-tight">LinkBoost</span>
+      <span className="text-lg font-bold tracking-tight text-glow-soft">
+        Link<span className="text-cyan-300">Boost</span>
+      </span>
     </div>
   );
 }
@@ -202,30 +223,37 @@ function Logo() {
 function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-12 pt-8 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:pt-16">
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-[520px] bg-gradient-to-b from-cyan-500/10 via-transparent to-transparent" />
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-16 pt-10 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:pt-20">
         <div className="order-2 lg:order-1">
-          <div className="relative overflow-hidden rounded-2xl border border-cyan-400/20 ring-glow-cyan">
-            <Image
-              src="/hero-banner.png"
-              alt=""
-              width={1200}
-              height={520}
-              priority
-              className="h-full w-full object-cover"
-            />
+          <div className="scan-frame">
+            <div className="relative">
+              <Image
+                src="/hero-banner.png"
+                alt=""
+                width={1200}
+                height={520}
+                priority
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#04060c]/40 via-transparent to-transparent" />
+            </div>
           </div>
         </div>
 
         <div className="order-1 text-right lg:order-2">
-          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/5 px-3 py-1 text-xs font-medium text-cyan-200">
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/5 px-3.5 py-1.5 text-xs font-medium text-cyan-200 shadow-[0_0_24px_rgba(34,211,238,0.2)]">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-300" />
+            </span>
             מתאים במיוחד לסוכנויות קידום ומקדמי אתרים עם 10+ לקוחות
           </span>
 
-          <h1 className="mt-5 text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-[64px]">
             לא נמאס לכם לרדוף
             <br />
-            <span className="text-glow-cyan text-cyan-300">
+            <span className="bg-gradient-to-l from-cyan-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent text-glow-cyan">
               אחרי קישורים כל חודש?
             </span>
           </h1>
@@ -236,7 +264,9 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <CtaButton href="#contact">לבדיקת התאמה חינמית ומהירה</CtaButton>
+            <CtaButton href="#contact" pulse>
+              לבדיקת התאמה חינמית ומהירה
+            </CtaButton>
             <span className="text-sm text-slate-400">
               2 דקות · ללא התחייבות · מותאם לסוכנויות SEO
             </span>
@@ -264,25 +294,23 @@ function PainPoints() {
   ];
 
   return (
-    <section className="relative py-16 lg:py-24">
+    <section className="section-divider relative py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold text-white text-glow-soft sm:text-4xl">
             מזדהים?
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-slate-400">
-            המעגל המתיש שכל סוכנות SEO מכירה מקרוב.
-          </p>
+          <div className="neon-rule" />
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {blocks.map((b) => (
             <div
               key={b.title}
-              className="card-surface rounded-2xl border border-white/5 p-6"
+              className="hud lift card-surface rounded-2xl border border-cyan-400/20 p-6"
             >
               <div className="mb-4 flex items-center gap-3">
-                <span className="grid h-8 w-8 place-items-center rounded-md bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/30">
+                <span className="grid h-9 w-9 place-items-center rounded-md bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/40 shadow-[0_0_18px_rgba(34,211,238,0.3)]">
                   <IconAlert className="h-4 w-4" />
                 </span>
                 <h3 className="text-lg font-semibold text-white">{b.title}</h3>
@@ -300,7 +328,7 @@ function SolutionCallout() {
   return (
     <section className="relative pb-4">
       <div className="mx-auto max-w-4xl px-6 text-center">
-        <p className="text-lg font-medium text-cyan-200">
+        <p className="text-lg font-medium text-cyan-200 text-glow-soft">
           יש לנו חדשות משמחות בשבילכם – זה לא חייב להיות ככה.
         </p>
         <h2 className="mt-4 text-3xl font-extrabold text-white sm:text-4xl">
@@ -309,7 +337,7 @@ function SolutionCallout() {
         <p className="mt-4 text-lg text-slate-300">
           ואתם תתמקדו בלקוחות שלכם וגיוס עוד ועוד לקוחות חדשים
         </p>
-        <p className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-5 py-2 text-sm text-slate-200">
+        <p className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-cyan-400/30 bg-cyan-400/5 px-5 py-2 text-sm text-slate-200 shadow-[0_0_28px_rgba(34,211,238,0.15)]">
           <span>קישורים איכותיים</span>
           <Dot />
           <span>תהליך מסודר</span>
@@ -327,7 +355,7 @@ function PrimaryCta() {
   return (
     <section className="py-12">
       <div className="mx-auto max-w-3xl px-6 text-center">
-        <CtaButton href="#contact" className="mx-auto">
+        <CtaButton href="#contact" className="mx-auto" pulse>
           לבדיקת התאמה חינמית ומהירה
         </CtaButton>
         <p className="mt-3 text-sm text-slate-400">
@@ -346,11 +374,11 @@ function Stats() {
           {stats.map((s) => (
             <div
               key={s.label}
-              className="card-surface rounded-2xl border border-cyan-400/15 p-5 text-center"
+              className="hud lift card-surface rounded-2xl border border-cyan-400/25 p-5 text-center"
             >
               <div
                 dir="ltr"
-                className="text-3xl font-extrabold text-cyan-300 text-glow-cyan"
+                className="bg-gradient-to-b from-cyan-200 to-cyan-400 bg-clip-text text-3xl font-extrabold text-transparent text-glow-cyan"
               >
                 {s.value}
               </div>
@@ -367,30 +395,27 @@ function Stats() {
 
 function CustomerStories() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="section-divider py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <span className="text-sm font-semibold tracking-wider text-cyan-300">
-            סיפור לקוח
-          </span>
-          <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+          <span className="eyebrow">סיפור לקוח</span>
+          <h2 className="mt-3 text-3xl font-bold text-white text-glow-soft sm:text-4xl">
             תנו לנו לספר לכם על הלקוחות שלנו
           </h2>
+          <div className="neon-rule" />
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {stories.map((s) => (
             <article
-              key={s.name}
-              className="card-surface flex flex-col rounded-2xl border border-white/10 p-6"
+              key={s.title}
+              className="hud lift card-surface flex flex-col rounded-2xl border border-cyan-400/25 p-6"
             >
               <header className="mb-4 flex items-center gap-3">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/30">
+                <span className="grid h-10 w-10 place-items-center rounded-full bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/40 shadow-[0_0_18px_rgba(34,211,238,0.35)]">
                   <IconUser className="h-5 w-5" />
                 </span>
-                <h3 className="text-lg font-semibold text-white">
-                  על {s.name}
-                </h3>
+                <h3 className="text-lg font-semibold text-white">{s.title}</h3>
               </header>
               <p className="mb-3 font-medium text-cyan-100">{s.intro}</p>
               <p className="text-sm leading-relaxed text-slate-300">
@@ -421,35 +446,38 @@ function ShouldNotBuild() {
   ];
 
   return (
-    <section className="py-16 lg:py-24">
+    <section className="section-divider py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold text-white text-glow-soft sm:text-4xl">
             אתם לא אמורים לבנות קישורים בעצמכם
           </h2>
           <p className="mt-3 text-slate-400">
             (בהנחה שאתם מקדמים מספר רב של אתרים)
           </p>
+          <div className="neon-rule" />
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {items.map((it) => (
             <div
               key={it.label}
-              className="card-surface rounded-2xl border border-white/10 p-6"
+              className="hud lift card-surface rounded-2xl border border-cyan-400/20 p-6"
             >
               <p className="text-lg font-semibold text-white">{it.label}</p>
               <p className="mt-3 text-slate-300">{it.sub}</p>
-              <p className="mt-6 text-sm font-medium text-cyan-300">
+              <p className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-300">
+                <span className="h-px w-6 bg-cyan-300/60" />
                 כי הזמן שלך שווה יותר
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 overflow-hidden rounded-2xl ring-glow-red">
-          <div className="bg-gradient-to-l from-red-500/20 via-red-500/10 to-transparent px-6 py-8 text-center">
-            <p className="text-2xl font-extrabold text-red-200 sm:text-3xl">
+        <div className="hud hud-red mt-12 overflow-hidden rounded-2xl ring-glow-red">
+          <div className="relative bg-gradient-to-l from-red-500/25 via-red-500/10 to-transparent px-6 py-10 text-center">
+            <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(239,68,68,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.15)_1px,transparent_1px)] [background-size:32px_32px]" />
+            <p className="relative text-2xl font-extrabold text-red-200 text-glow-red sm:text-3xl">
               אז למה אתם עדיין בונים קישורים בעצמכם?
             </p>
           </div>
@@ -461,16 +489,18 @@ function ShouldNotBuild() {
 
 function Features() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="section-divider py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold text-white text-glow-soft sm:text-4xl">
             למה מקדמי אתרים וסוכנויות בוחרים בנו
           </h2>
-          <p className="mx-auto mt-3 max-w-3xl text-slate-300">
+          <div className="neon-rule" />
+          <p className="mx-auto mt-5 max-w-3xl text-slate-300">
             כי אנחנו נותנים להם שקט תעשייתי וקישורים מעולים, כל חודש מחדש.
             תפסיקו לבזבז זמן על המון ספקים ומבצעים ותתמקדו בלהגדיל את העסק
-            ולהביא עוד לקוחות.
+            ולהביא עוד לקוחות. כשאנחנו לצידכם – אין גבול לכמות הלקוחות שתוכלו
+            לקדם.
           </p>
         </div>
 
@@ -478,10 +508,11 @@ function Features() {
           {features.map(({ title, body, icon: Icon }) => (
             <div
               key={title}
-              className="card-surface rounded-2xl border border-cyan-400/15 p-6"
+              className="hud lift card-surface group rounded-2xl border border-cyan-400/25 p-6"
             >
-              <span className="mb-4 inline-grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/30">
+              <span className="relative mb-5 inline-grid h-12 w-12 place-items-center rounded-xl bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/50 shadow-[0_0_22px_rgba(34,211,238,0.35)] transition group-hover:shadow-[0_0_32px_rgba(34,211,238,0.6)]">
                 <Icon className="h-5 w-5" />
+                <span className="pointer-events-none absolute -inset-1 rounded-xl border border-dashed border-cyan-400/30" />
               </span>
               <h3 className="text-lg font-semibold text-white">{title}</h3>
               <p className="mt-2 text-slate-300">{body}</p>
@@ -490,7 +521,7 @@ function Features() {
         </div>
 
         <div className="mt-12 text-center">
-          <CtaButton href="#contact" className="mx-auto">
+          <CtaButton href="#contact" className="mx-auto" pulse>
             התחל ניתוח SEO חינם · 2 דקות
           </CtaButton>
           <p className="mt-3 text-sm text-slate-400">
@@ -504,17 +535,20 @@ function Features() {
 
 function FitCheck() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="section-divider py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold text-white text-glow-soft sm:text-4xl">
             האם השירות שלנו מתאים לכם?
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-slate-300">
-            השירות שלנו לא מתאים לכולם – וזה בסדר גמור. אנחנו לא מנסים לעבוד עם
-            כולם. אבל אם יש בינינו התאמה – נוכל לחסוך לכם המון זמן ואנרגיה,
-            ובעיקר לתת לכם שקט נפשי וחופש מהעבודה הסיזיפית של בניית הקישורים
-            החודשית.
+          <div className="neon-rule" />
+          <p className="mx-auto mt-5 max-w-3xl text-lg font-medium text-cyan-100">
+            השירות שלנו לא מתאים לכולם – וזה בסדר גמור.
+          </p>
+          <p className="mx-auto mt-3 max-w-3xl text-slate-300">
+            אנחנו לא מנסים לעבוד עם כולם. אבל אם כן יש ביננו התאמה – נוכל לחסוך
+            לכם המון זמן ואנרגיה ובעיקר לתת לכם שקט נפשי וחופש מהעבודה
+            הסיזיפית של בניית הקישורים החודשית.
           </p>
         </div>
 
@@ -536,7 +570,7 @@ function FitCheck() {
             אם זיהיתם את עצמכם ברשימת ה״מתאים״ – כדאי לנו מאוד לדבר.
           </p>
           <div className="mt-6">
-            <CtaButton href="#contact" className="mx-auto">
+            <CtaButton href="#contact" className="mx-auto" pulse>
               בדוק אם אנחנו מתאימים
             </CtaButton>
           </div>
@@ -558,15 +592,17 @@ function FitCard({
   const isPositive = tone === "positive";
   return (
     <div
-      className={`card-surface rounded-2xl border p-6 ${
+      className={`hud card-surface rounded-2xl border p-6 ${
         isPositive
-          ? "border-emerald-400/30 ring-glow-cyan"
-          : "border-red-400/25"
+          ? "border-emerald-400/40 ring-glow-emerald"
+          : "border-red-400/30 ring-glow-red hud-red"
       }`}
     >
       <h3
         className={`mb-5 text-xl font-bold ${
-          isPositive ? "text-emerald-200" : "text-red-200"
+          isPositive
+            ? "text-emerald-200 text-glow-soft"
+            : "text-red-200 text-glow-red"
         }`}
       >
         {title}
@@ -577,8 +613,8 @@ function FitCard({
             <span
               className={`mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full ${
                 isPositive
-                  ? "bg-emerald-400/15 text-emerald-300 ring-1 ring-emerald-400/40"
-                  : "bg-red-400/15 text-red-300 ring-1 ring-red-400/40"
+                  ? "bg-emerald-400/15 text-emerald-300 ring-1 ring-emerald-400/50 shadow-[0_0_12px_rgba(52,211,153,0.4)]"
+                  : "bg-red-400/15 text-red-300 ring-1 ring-red-400/50 shadow-[0_0_12px_rgba(239,68,68,0.35)]"
               }`}
             >
               {isPositive ? (
@@ -597,33 +633,33 @@ function FitCard({
 
 function HowItWorks() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="section-divider py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <span className="text-sm font-semibold tracking-wider text-cyan-300">
-            איך זה עובד
-          </span>
-          <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+          <span className="eyebrow">איך זה עובד</span>
+          <h2 className="mt-3 text-3xl font-bold text-white text-glow-soft sm:text-4xl">
             3 צעדים פשוטים לחופש מלא מקישורים
           </h2>
-          <p className="mt-3 text-slate-300">
+          <div className="neon-rule" />
+          <p className="mt-5 text-slate-300">
             תהליך מסודר, שקוף ומדיד – מבדיקה ראשונית ועד דוח חודשי.
           </p>
         </div>
 
-        <ol className="mt-12 grid gap-6 md:grid-cols-3">
+        <ol className="mt-16 grid gap-8 md:grid-cols-3">
           {steps.map((s, i) => (
             <li
               key={s.title}
-              className="card-surface relative rounded-2xl border border-white/10 p-6"
+              className="hud lift card-surface relative rounded-2xl border border-cyan-400/25 p-7 pt-10"
             >
-              <span className="absolute -top-4 left-6 grid h-9 w-9 place-items-center rounded-full bg-cyan-400 text-base font-bold text-slate-900 shadow-[0_0_20px_rgba(34,211,238,0.6)]">
-                {i + 1}
+              <span
+                dir="ltr"
+                className="num-tile absolute -top-6 right-6"
+              >
+                0{i + 1}
               </span>
-              <h3 className="mt-2 text-lg font-semibold text-white">
-                {s.title}
-              </h3>
-              <p className="mt-3 text-slate-300">{s.body}</p>
+              <h3 className="text-xl font-semibold text-white">{s.title}</h3>
+              <p className="mt-3 leading-relaxed text-slate-300">{s.body}</p>
             </li>
           ))}
         </ol>
@@ -634,17 +670,17 @@ function HowItWorks() {
 
 function Testimonials() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="section-divider py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <span className="text-sm font-semibold tracking-wider text-cyan-300">
-            סיפורי הצלחה
-          </span>
-          <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+          <span className="eyebrow">סיפורי הצלחה</span>
+          <h2 className="mt-3 text-3xl font-bold text-white text-glow-soft sm:text-4xl">
             מקדמי אתרים שעברו אלינו – וכבר לא בונים קישורים בעצמם
           </h2>
-          <p className="mt-3 text-slate-300">
-            סוכנויות ואנשי SEO שהפסיקו לבנות קישורים בעצמם – ומתרכזים בצמיחה.
+          <div className="neon-rule" />
+          <p className="mt-5 text-slate-300">
+            סוכנויות ואנשי SEO שכבר הפסיקו לבנות קישורים בעצמם – ומתרכזים
+            בצמיחה.
           </p>
         </div>
 
@@ -652,19 +688,26 @@ function Testimonials() {
           {testimonials.map((t) => (
             <figure
               key={t.name}
-              className={`card-surface rounded-2xl p-7 ${toneRing[t.tone]}`}
+              className={`card-surface rounded-2xl p-7 ${toneRing[t.tone]} ${toneHud[t.tone]}`}
             >
+              <h3
+                className={`mb-3 text-lg font-bold ${toneTitle[t.tone]}`}
+              >
+                {t.title}
+              </h3>
               <span
-                className={`mb-4 inline-block text-3xl leading-none ${toneQuote[t.tone]}`}
+                className={`mb-2 inline-block text-3xl leading-none ${toneQuote[t.tone]}`}
                 aria-hidden
               >
                 ❝
               </span>
-              <p className={`mb-4 font-semibold ${toneQuote[t.tone]}`}>
+              <blockquote className="mb-5 text-slate-200">
+                {t.quote}
+              </blockquote>
+              <p className={`mb-5 font-semibold ${toneQuote[t.tone]}`}>
                 {t.highlight}
               </p>
-              <blockquote className="text-slate-200">{t.quote}</blockquote>
-              <figcaption className="mt-6 text-sm">
+              <figcaption className="border-t border-white/10 pt-4 text-sm">
                 <div className="font-semibold text-white">{t.name}</div>
                 <div className="text-slate-400">{t.role}</div>
               </figcaption>
@@ -680,18 +723,19 @@ function FinalCta() {
   return (
     <section id="contact" className="py-16 lg:py-24">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="relative overflow-hidden rounded-3xl border border-cyan-400/30 ring-glow-cyan">
+        <div className="hud relative overflow-hidden rounded-3xl border border-cyan-400/40 ring-glow-cyan">
           <Image
             src="/cta-banner.png"
             alt=""
             width={1600}
             height={900}
-            className="absolute inset-0 h-full w-full object-cover opacity-80"
+            className="absolute inset-0 h-full w-full object-cover opacity-90"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-[#05070d]/85 via-[#05070d]/55 to-[#05070d]/20" />
+          <div className="absolute inset-0 bg-gradient-to-l from-[#04060c]/95 via-[#04060c]/70 to-[#04060c]/10" />
+          <div className="pointer-events-none absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(34,211,238,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.18)_1px,transparent_1px)] [background-size:40px_40px]" />
 
           <div className="relative px-6 py-12 text-right sm:px-12 sm:py-16">
-            <h2 className="max-w-xl text-3xl font-extrabold text-white sm:text-4xl">
+            <h2 className="max-w-xl text-3xl font-extrabold text-white text-glow-soft sm:text-4xl">
               גם אתם רוצים להפסיק להתעסק עם בניית הקישורים?
             </h2>
             <p className="mt-3 text-slate-200">
@@ -699,13 +743,15 @@ function FinalCta() {
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <CtaButton href="#contact">בואו נראה מה מתאים לך</CtaButton>
+              <CtaButton href="#contact" pulse>
+                בואו נראה מה מתאים לך
+              </CtaButton>
               <span className="text-sm text-slate-300">
                 מיועד למקדמי אתרים
               </span>
             </div>
 
-            <div className="mt-10 max-w-xl border-t border-white/10 pt-6">
+            <div className="mt-10 max-w-xl border-t border-cyan-400/20 pt-6">
               <p className="text-lg font-semibold text-white">
                 תפסיקו לנהל ספקי קישורים – והתחילו לגדול.
               </p>
@@ -713,7 +759,7 @@ function FinalCta() {
                 ענו על כמה שאלות קצרות ונבין יחד איפה אתם כיום ואיך אנחנו
                 יכולים לקחת מכם את כאב הראש הזה.
               </p>
-              <p className="mt-3 text-sm text-slate-400">
+              <p className="mt-3 text-sm text-cyan-200/80">
                 בדיקה חינמית – 2 דקות · ללא התחייבות · מותאם לסוכנויות SEO
                 ופרילנסרים
               </p>
@@ -727,7 +773,8 @@ function FinalCta() {
 
 function SiteFooter() {
   return (
-    <footer className="border-t border-white/5 py-10">
+    <footer className="relative border-t border-cyan-400/15 py-10">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent shadow-[0_0_12px_rgba(34,211,238,0.5)]" />
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
         <Logo />
         <p className="text-sm text-slate-500">© 2026 LinkBoost. כל הזכויות שמורות.</p>
@@ -740,27 +787,32 @@ function CtaButton({
   href,
   children,
   className = "",
+  pulse = false,
 }: {
   href: string;
   children: ReactNode;
   className?: string;
+  pulse?: boolean;
 }) {
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-l from-cyan-400 to-sky-500 px-7 py-3.5 text-base font-bold text-slate-900 shadow-[0_0_24px_rgba(34,211,238,0.45)] transition hover:from-cyan-300 hover:to-sky-400 hover:shadow-[0_0_32px_rgba(34,211,238,0.6)] ${className}`}
+      className={`group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-l from-cyan-300 via-cyan-400 to-sky-500 px-7 py-3.5 text-base font-bold text-slate-900 transition hover:from-cyan-200 hover:via-cyan-300 hover:to-sky-400 ${
+        pulse ? "cta-pulse" : "shadow-[0_0_24px_rgba(34,211,238,0.45)] hover:shadow-[0_0_36px_rgba(34,211,238,0.65)]"
+      } ${className}`}
     >
-      <span>{children}</span>
+      <span className="pointer-events-none absolute -inset-px rounded-full ring-1 ring-cyan-200/50" />
+      <span className="relative">{children}</span>
       <svg
         viewBox="0 0 20 20"
         fill="none"
         aria-hidden
-        className="h-4 w-4 -scale-x-100"
+        className="relative h-4 w-4 -scale-x-100 transition group-hover:translate-x-0.5"
       >
         <path
           d="M4 10h12m0 0-4-4m4 4-4 4"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />

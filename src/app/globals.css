@@ -2,11 +2,12 @@
 
 @theme {
   --font-sans: var(--font-heebo), ui-sans-serif, system-ui, sans-serif;
-  --color-ink: #05070d;
-  --color-ink-2: #0a1020;
+  --color-ink: #04060c;
+  --color-ink-2: #080d1a;
   --color-ink-3: #0e1830;
   --color-cyan-glow: #22d3ee;
   --color-cyan-soft: #67e8f9;
+  --color-magenta: #ec4899;
 }
 
 html,
@@ -14,72 +15,312 @@ body {
   background-color: var(--color-ink);
 }
 
-/* Faint starfield + radial vignette behind everything */
-.bg-starfield {
+/* Dark cyber background: vignette + faint grid + stars */
+.bg-cyber {
   background-color: var(--color-ink);
   background-image:
-    radial-gradient(ellipse at top, rgba(34, 211, 238, 0.12), transparent 55%),
-    radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.08), transparent 60%),
-    radial-gradient(1px 1px at 17% 22%, rgba(255, 255, 255, 0.45) 50%, transparent 51%),
+    linear-gradient(to right, rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    radial-gradient(ellipse at top, rgba(34, 211, 238, 0.22), transparent 55%),
+    radial-gradient(ellipse at 80% 30%, rgba(99, 102, 241, 0.15), transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(236, 72, 153, 0.08), transparent 60%),
+    radial-gradient(1px 1px at 17% 22%, rgba(255, 255, 255, 0.5) 50%, transparent 51%),
     radial-gradient(1px 1px at 38% 71%, rgba(255, 255, 255, 0.35) 50%, transparent 51%),
     radial-gradient(1px 1px at 63% 18%, rgba(255, 255, 255, 0.4) 50%, transparent 51%),
     radial-gradient(1px 1px at 81% 47%, rgba(255, 255, 255, 0.35) 50%, transparent 51%),
-    radial-gradient(1px 1px at 9% 83%, rgba(255, 255, 255, 0.4) 50%, transparent 51%),
-    radial-gradient(1px 1px at 49% 33%, rgba(255, 255, 255, 0.3) 50%, transparent 51%),
-    radial-gradient(1px 1px at 91% 88%, rgba(255, 255, 255, 0.35) 50%, transparent 51%),
-    radial-gradient(1px 1px at 24% 55%, rgba(255, 255, 255, 0.3) 50%, transparent 51%);
+    radial-gradient(1px 1px at 9% 83%, rgba(255, 255, 255, 0.4) 50%, transparent 51%);
+  background-size:
+    64px 64px,
+    64px 64px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-attachment: fixed;
 }
 
+/* Section fade-in for grid */
+.section-divider {
+  position: relative;
+}
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(180px, 30%, 360px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 211, 238, 0.6),
+    rgba(168, 85, 247, 0.4),
+    rgba(34, 211, 238, 0.6),
+    transparent
+  );
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.5);
+}
+
+.neon-rule {
+  width: 96px;
+  height: 2px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.7);
+  border-radius: 9999px;
+}
+
+/* Text glows */
 .text-glow-cyan {
   text-shadow:
-    0 0 14px rgba(34, 211, 238, 0.45),
-    0 0 28px rgba(34, 211, 238, 0.2);
+    0 0 10px rgba(34, 211, 238, 0.55),
+    0 0 28px rgba(34, 211, 238, 0.35),
+    0 0 56px rgba(34, 211, 238, 0.2);
 }
 
+.text-glow-soft {
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.35);
+}
+
+.text-glow-red {
+  text-shadow:
+    0 0 12px rgba(248, 113, 113, 0.55),
+    0 0 28px rgba(239, 68, 68, 0.35);
+}
+
+/* Glow rings on cards */
 .ring-glow-cyan {
   box-shadow:
     0 0 0 1px rgba(34, 211, 238, 0.5),
-    0 0 24px rgba(34, 211, 238, 0.25),
-    inset 0 0 24px rgba(34, 211, 238, 0.08);
+    0 0 28px rgba(34, 211, 238, 0.25),
+    inset 0 0 28px rgba(34, 211, 238, 0.06);
 }
-
 .ring-glow-purple {
   box-shadow:
-    0 0 0 1px rgba(168, 85, 247, 0.55),
-    0 0 24px rgba(168, 85, 247, 0.25),
-    inset 0 0 24px rgba(168, 85, 247, 0.08);
+    0 0 0 1px rgba(168, 85, 247, 0.6),
+    0 0 28px rgba(168, 85, 247, 0.3),
+    inset 0 0 28px rgba(168, 85, 247, 0.08);
 }
-
 .ring-glow-teal {
   box-shadow:
-    0 0 0 1px rgba(45, 212, 191, 0.55),
-    0 0 24px rgba(45, 212, 191, 0.22),
-    inset 0 0 24px rgba(45, 212, 191, 0.08);
+    0 0 0 1px rgba(45, 212, 191, 0.6),
+    0 0 28px rgba(45, 212, 191, 0.25),
+    inset 0 0 28px rgba(45, 212, 191, 0.08);
 }
-
 .ring-glow-amber {
   box-shadow:
-    0 0 0 1px rgba(251, 191, 36, 0.55),
-    0 0 24px rgba(251, 191, 36, 0.22),
-    inset 0 0 24px rgba(251, 191, 36, 0.08);
+    0 0 0 1px rgba(251, 191, 36, 0.6),
+    0 0 28px rgba(251, 191, 36, 0.25),
+    inset 0 0 28px rgba(251, 191, 36, 0.08);
 }
-
 .ring-glow-blue {
   box-shadow:
-    0 0 0 1px rgba(59, 130, 246, 0.6),
-    0 0 24px rgba(59, 130, 246, 0.25),
-    inset 0 0 24px rgba(59, 130, 246, 0.08);
+    0 0 0 1px rgba(59, 130, 246, 0.65),
+    0 0 28px rgba(59, 130, 246, 0.3),
+    inset 0 0 28px rgba(59, 130, 246, 0.08);
 }
-
 .ring-glow-red {
   box-shadow:
     0 0 0 1px rgba(239, 68, 68, 0.55),
-    0 0 28px rgba(239, 68, 68, 0.28),
-    inset 0 0 24px rgba(239, 68, 68, 0.08);
+    0 0 32px rgba(239, 68, 68, 0.32),
+    inset 0 0 28px rgba(239, 68, 68, 0.08);
+}
+.ring-glow-emerald {
+  box-shadow:
+    0 0 0 1px rgba(52, 211, 153, 0.55),
+    0 0 28px rgba(52, 211, 153, 0.25),
+    inset 0 0 28px rgba(52, 211, 153, 0.06);
 }
 
 .card-surface {
   background:
-    linear-gradient(180deg, rgba(14, 24, 48, 0.65) 0%, rgba(10, 16, 32, 0.55) 100%);
+    linear-gradient(180deg, rgba(14, 24, 48, 0.7) 0%, rgba(8, 12, 26, 0.7) 100%);
   backdrop-filter: blur(6px);
+}
+
+/* HUD corner brackets via pseudo-elements */
+.hud {
+  position: relative;
+}
+.hud::before,
+.hud::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-color: rgba(34, 211, 238, 0.8);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+}
+.hud::before {
+  top: -1px;
+  right: -1px;
+  border-top: 1.5px solid;
+  border-right: 1.5px solid;
+}
+.hud::after {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 1.5px solid;
+  border-left: 1.5px solid;
+}
+.hud-purple::before,
+.hud-purple::after {
+  border-color: rgba(168, 85, 247, 0.9);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+}
+.hud-teal::before,
+.hud-teal::after {
+  border-color: rgba(45, 212, 191, 0.9);
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.6);
+}
+.hud-amber::before,
+.hud-amber::after {
+  border-color: rgba(251, 191, 36, 0.9);
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+}
+.hud-blue::before,
+.hud-blue::after {
+  border-color: rgba(59, 130, 246, 0.9);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+.hud-red::before,
+.hud-red::after {
+  border-color: rgba(239, 68, 68, 0.9);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+/* Animated pulse on the primary CTA */
+@keyframes pulse-cyan {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.7),
+      0 0 24px rgba(34, 211, 238, 0.45),
+      0 0 56px rgba(34, 211, 238, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 1),
+      0 0 40px rgba(34, 211, 238, 0.75),
+      0 0 96px rgba(34, 211, 238, 0.3);
+  }
+}
+.cta-pulse {
+  animation: pulse-cyan 2.6s ease-in-out infinite;
+}
+
+/* Rotating conic-gradient border (hero image frame) */
+@keyframes border-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.scan-frame {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 211, 238, 0.35),
+    rgba(99, 102, 241, 0.2) 50%,
+    rgba(34, 211, 238, 0.35)
+  );
+  isolation: isolate;
+}
+.scan-frame::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(34, 211, 238, 0.85) 30deg,
+    transparent 90deg,
+    transparent 270deg,
+    rgba(168, 85, 247, 0.75) 320deg,
+    transparent 360deg
+  );
+  filter: blur(4px);
+  z-index: -1;
+  animation: border-spin 9s linear infinite;
+  opacity: 0.85;
+}
+.scan-frame > * {
+  border-radius: calc(1rem - 1px);
+  overflow: hidden;
+}
+
+/* Animated horizontal scanline that sweeps a section once on view */
+@keyframes scanline-drift {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.5; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Section eyebrow with bracket marks */
+.eyebrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: rgb(165, 243, 252);
+  text-transform: uppercase;
+}
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.9));
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+}
+.eyebrow::after {
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.9), transparent);
+}
+
+/* Hover lift for feature/story cards */
+.lift {
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease,
+    border-color 280ms ease;
+}
+.lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Number tile for steps */
+.num-tile {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  font-weight: 800;
+  color: #06283d;
+  background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 60%, #0ea5e9 100%);
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.6),
+    0 0 24px rgba(34, 211, 238, 0.55),
+    inset 0 0 12px rgba(255, 255, 255, 0.3);
+}
+.num-tile::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 16px;
+  border: 1px dashed rgba(34, 211, 238, 0.45);
+  pointer-events: none;
 }
