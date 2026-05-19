@@ -269,7 +269,10 @@ function Logo() {
 
 function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden pb-6 pt-20 md:pt-28">
+    <section
+      id="hero"
+      className="relative flex min-h-[760px] items-center overflow-hidden pb-16 pt-28 md:min-h-[860px] md:pt-36 lg:min-h-[920px]"
+    >
       <Image
         src="/hero-banner.png"
         alt=""
@@ -282,17 +285,17 @@ function Hero() {
       <div className="blob blob-cyan-strong absolute right-1/4 top-1/3 h-[500px] w-[500px]" />
       <div className="blob blob-cyan absolute bottom-0 left-1/4 h-[400px] w-[400px]" />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <div className="mx-auto max-w-3xl pt-4 pb-2 text-center">
-          <span className="inline-flex max-w-[92%] items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/5 px-3.5 py-1.5 text-xs font-extrabold leading-tight text-cyan-200 shadow-[0_0_24px_rgba(34,211,238,0.18)]">
-            <span className="relative flex h-2 w-2 shrink-0">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
+        <div className="mx-auto max-w-4xl text-center">
+          <span className="inline-flex max-w-[95%] items-center gap-2.5 rounded-full border border-cyan-400/40 bg-cyan-400/5 px-5 py-2.5 text-sm font-extrabold leading-snug text-cyan-200 shadow-[0_0_24px_rgba(34,211,238,0.2)] md:text-base">
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-300" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-300" />
             </span>
             מתאים במיוחד לסוכנויות קידום ומקדמי אתרים עם 10+ לקוחות
           </span>
 
-          <h1 className="mt-6 text-3xl font-extrabold leading-[1.1] text-white md:text-5xl lg:text-[60px]">
+          <h1 className="mt-8 text-4xl font-extrabold leading-[1.05] text-white md:text-6xl lg:text-[80px]">
             לא נמאס לכם לרדוף
             <br />
             <span className="text-cyan-300 text-glow-cyan">אחרי קישורים כל חודש?</span>
@@ -545,7 +548,7 @@ function Features() {
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-2 text-center">
-          <CtaButton pulse>התחילו ניתוח SEO חינם</CtaButton>
+          <CtaButton pulse>בדקו התאמה תוך 2 דקות</CtaButton>
           <p className="text-xs text-slate-400">
             ללא התחייבות. מותאם לסוכנויות SEO ופרילנסרים.
           </p>
