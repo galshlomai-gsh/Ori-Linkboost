@@ -295,7 +295,7 @@ function Hero() {
           <h1 className="mt-6 text-3xl font-extrabold leading-[1.1] text-white md:text-5xl lg:text-[60px]">
             לא נמאס לכם לרדוף
             <br />
-            <span className="text-cyan-300 text-glow-cyan">אחרי קישורים כל חודש?</span>
+            <span className="text-cyan-300 text-glow-cyan">אחרי קישורים כל חודש?</span> test
           </h1>
         </div>
       </div>
